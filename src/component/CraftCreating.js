@@ -2,9 +2,11 @@ import { Box } from "@mui/material";
 import PropTypes from 'prop-types';
 
 CraftCreating.propTypes = {
-    items:PropTypes.array
+    items:PropTypes.array,
+    resultItem:PropTypes.object,
 }
-export default function CraftCreating({items=[],props}) {
+
+export default function CraftCreating({items=[], resultItem = {},...props}) {
     return (
         <Box {...props}  >
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"  viewBox="0 0 1120 800">
@@ -12,6 +14,10 @@ export default function CraftCreating({items=[],props}) {
                 <clipPath id="clippath">
                     <path d="M1584.4318,329.6668h-203.6673v-35.0501c0-7.8883,6.3947-14.283,14.283-14.283h140.3045c5.9858,0,11.6484,2.7154,15.396,7.3827l33.6837,41.9504Z" fill="none" />
                 </clipPath>
+                <radialGradient id="radial-gradient-111" cx="-1628.5176" cy="-228.8648" fx="-1628.5176" fy="-228.8648" r="201.1668" gradientTransform="translate(3220.2963 1115.495) scale(1 2)" gradientUnits="userSpaceOnUse">
+                    <stop offset=".1374" stopColor="#33312b" />
+                    <stop offset="1" stopColor="#000" />
+                </radialGradient>
                 <radialGradient id="radial-gradient" cx="-1628.5176" cy="-228.8648" fx="-1628.5176" fy="-228.8648" r="91.1668" gradientTransform="translate(2549.2963 1115.495) scale(1 2)" gradientUnits="userSpaceOnUse">
                     <stop offset=".1374" stopColor="#33312b" />
                     <stop offset="1" stopColor="#000" />
@@ -71,8 +77,21 @@ export default function CraftCreating({items=[],props}) {
                         <text transform="translate(1405.9516 316.5872) scale(1 .75)" fill="#fff" fontFamily="Gotham-Black, &apos;Gotham Black&apos;" fontSize="36"><tspan x="0" y="0" letterSpacing="-.01em">R</tspan><tspan x="25.5244" y="0">esult</tspan></text>
                     </g>
                     <path d="M1804.4424,331.6467h-422.3162V965.5289c0,10.0399,8.1389,18.1788,18.1788,18.1788h404.1374c10.0398,0,18.1787-8.1389,18.1787-18.1787V349.8254c0-10.0398-8.1389-18.1787-18.1787-18.1787Zm-12.2168,519.7363c0,11.7963-9.5628,21.3591-21.3591,21.3591h-344.0347c-11.7963,0-21.3591-9.5628-21.3591-21.3591V505.1252c0-11.7966,9.563-21.3596,21.3596-21.3596h344.0342c11.7963,0,21.3591,9.5628,21.3591,21.3591v346.2583Z" fill="#490000" stroke="#ba0000" strokeMiterlimit="10" strokeWidth="3" />
+
                     <path d="M1791.1192,512.2466v343.2868c0,7.5645-6.1533,13.7178-13.7178,13.7178h-356.5129c2.9807,6.809,9.7692,11.5712,17.6777,11.5712h343.1572c10.6578,0,19.2979-8.64,19.2979-19.2979v-332.4291c0-7.2447-3.9976-13.5488-9.9021-16.8488Z" fill="#9b9b9b" />
                     <g>
+                    <g>  
+                    
+                    <rect x="1410.418" y="490.2677"width="380" height="380" rx="15.1666" ry="15.1666" transform="translate(3198  1359) rotate(180)" fill="url(#radial-gradient-111)" stroke="#fff" strokeMiterlimit="10" strokeWidth="4.6233" />
+ 
+                    {resultItem && resultItem.name &&
+                        <g mix-blend-mode="multiply"> 
+                            <image  x="1410.418" y="490.2677" width="380" height="380" href = {resultItem.image}>
+                            </image>
+                        </g>
+                        
+                    }
+                    </g>
                         <rect x="838.5342" y="580.0405" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(1861.9817 1339.7978) rotate(180)" fill="#910909" />
                         <g>
                             <rect x="828.3221" y="567.9069" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(1841.5574 1315.5305) rotate(180)" fill="url(#radial-gradient)" stroke="#fff" strokeMiterlimit="10" strokeWidth="4.6233" />
@@ -92,12 +111,12 @@ export default function CraftCreating({items=[],props}) {
                     </g>
                     <g>
                         <rect x="1058.739" y="580.0405" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(2302.3913 1339.7978) rotate(180)" fill="#910909" />
+
                         <g>
                             <rect x="1048.5268" y="567.9069" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(2281.967 1315.5305) rotate(180)" fill="url(#radial-gradient-2)" stroke="#fff" strokeMiterlimit="10" strokeWidth="4.6233" />
+
                             <g mix-blend-mode="multiply">
-                                <g clipPath="url(#clippath-2)">
-                                    <use transform="translate(1242.4353 819.9099) rotate(-180) scale(.2502)" href="#image" />
-                                </g>
+                                
                                 {items.length>3 &&
                                 <image  x="1051.6227" y="570.2677" width="179.9893" height="174.9312" href = {items[3].image}>
 
@@ -275,11 +294,13 @@ export default function CraftCreating({items=[],props}) {
                         <path d="M1077.1101,801.3309c.9201-.2321,1.5559-.4011,2.3867-.5922,.1199-.0276,.288,.0393,.4003,.1132,.6029,.3967,1.1998,.8029,1.7864,1.2231,.0956,.0685,.1974,.2339,.1815,.3367-.2185,1.4109-.4572,2.8187-.6991,4.2762-.5381-.3608-1.0906-.5995-1.351-1.2572-.3382-.8544-.8109-1.6546-1.1835-2.4969-.2103-.4755-.478-.7678-.865-1.1107-.1997-.1769-.3558-.2969-.6564-.4922Z" fill="#c40000" />
                         <path d="M1084.8867,799.2802l1.8136,1.1717c-1.3418,.4162-2.5844,.8049-3.8306,1.1815-.0964,.0291-.2407,.0066-.3251-.049-.5812-.3825-1.1524-.7802-1.8163-1.2342l4.1584-1.07Z" fill="#c40000" />
                     </g>
+
                     <path d="M1048.5268,818.0428h40.0218c4.9823,0,9.0213-4.039,9.0213-9.0213v-33.3617" fill="none" stroke="#b2b2b2" strokeMiterlimit="10" strokeWidth="2" />
                     <path d="M1049.0915,399.383h72.9333c4.9823,0,9.0213-4.039,9.0213-9.0213v-33.3617" fill="none" stroke="#b2b2b2" strokeMiterlimit="10" strokeWidth="2" />
                 </g>
             </g>
         </svg>
+            
         </Box>
     )
 }

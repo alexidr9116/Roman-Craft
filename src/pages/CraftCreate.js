@@ -19,6 +19,8 @@ const CRAFTING_ITEMS = [
     { image: '/assets/materials/MATERIALS WOOD-01.png', count: 1, name: "Wood" },
 
 ]
+const RESULT_ITEM = {
+    image:'/assets/Chinese Pangu Axe LV 4-01.png', name:"Chinese Pangu Axe"}
 
 export default function CraftCreate() {
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -26,7 +28,8 @@ export default function CraftCreate() {
         <Page title="Craft Create">
             <Grid container sx={{padding:4, }} >
                 <Grid item md={4} xs={12} sx={{ paddingX: 2, marginTop:-8, marginBottom:8 }}>
-                    <InventoryList></InventoryList>
+                    {/* inventory list */}
+                    {/* <InventoryList></InventoryList> */}
                 </Grid>
                 <Grid item md={8} xs={12}>
                     <Stack sx={{ paddingRight: 2, marginY:-8, marginBottom:8}}>
@@ -43,7 +46,9 @@ export default function CraftCreate() {
                            
                             background: "rgba(40,40,40,0.7)",
                         }}>
-                            <CraftCreating items={CRAFTING_ITEMS} sx ={{  width:'100%'}}/>
+                            {/* <CraftCreating items={CRAFTING_ITEMS} sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/> */}
+                            <CraftCreating  sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/>
+                           
                         </Box>
                     </Stack>
 
