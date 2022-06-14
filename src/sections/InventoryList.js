@@ -102,7 +102,7 @@ export default function InventoryList() {
                 <Scrollbar sx={{
 
                     minHeight: '500px',
-                    maxHeight: (isDesktop ? '800px' : '500px'),
+                    height: (isDesktop ? '750px' : '450px'),
 
                 }}>
                     {INVENTORY_ITEMS.map((inventory, index) => (

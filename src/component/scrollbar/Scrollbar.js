@@ -19,8 +19,8 @@ const Scrollbar = ({
 
   function handleResize(ref, trackSize) {
     const { clientHeight, scrollHeight } = ref;
-    setThumbHeight(Math.max((clientHeight / scrollHeight) * trackSize, 20));
-    // setThumbHeight(50);
+    // setThumbHeight(Math.max((clientHeight / scrollHeight) * trackSize, 20));
+    setThumbHeight(100);
   }
  
 
