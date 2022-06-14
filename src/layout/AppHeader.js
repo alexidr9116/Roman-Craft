@@ -41,8 +41,9 @@ export default function AppHeader({ }) {
             >
                 <Logo></Logo>
                 <Box sx={{ flexGrow: 1 }} />
-
+                {isDesktop && 
                 <ApplicationMenus></ApplicationMenus>
+                }
                 <Stack spacing={1} direction='row' sx = {{alignItems:'center'}}>
                     <BackgroundButton sx={{ borderRadius: 20, backgroundColor: 'red' }} variant='outline'>
                         JOIN DISCORD
