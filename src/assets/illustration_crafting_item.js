@@ -1,5 +1,6 @@
 import { Box, SvgIcon, Typography } from "@mui/material";
 
+
 export default function CraftingTableTitleIcon({currentIndex = 1,handleCraftingTable=()=>{},handleRecipeBook=()=>{}, ...other }) {
     return (
         <Box {...other} sx={{ overflow: 'hidden', width: '100%', height: "128px" }}>
@@ -14,7 +15,7 @@ export default function CraftingTableTitleIcon({currentIndex = 1,handleCraftingT
                         </clipPath>
                     </defs>
                     <g transform = 'scale(0.5,0.5)'>
-                    <g opacity={((currentIndex===1)?1:0.5)} onClick={handleCraftingTable}>
+                    <g opacity={((currentIndex===1)?1:0.5)} onClick={handleCraftingTable} className = "crafting-table-item">
                         <g>
                             <path d="M1278.6382,246.7174h-493.5088v-46.9525c0-10.567,8.5663-19.1333,19.1333-19.1333h408.6291c8.0184,0,15.604,3.6374,20.6242,9.8898l45.1221,56.1959Z" fill="#840707" />
                             <g clipPath="url(#clippath)">
@@ -43,7 +44,7 @@ export default function CraftingTableTitleIcon({currentIndex = 1,handleCraftingT
                             </g>
                         </g>
                     </g>
-                    <g opacity={((currentIndex===2)?1:0.5)} onClick = {handleRecipeBook}>
+                    <g opacity={((currentIndex===2)?1:0.5)} onClick = {handleRecipeBook} className = "recipe-book-item">
                         <g>
                             <path d="M1819.6792,246.7174h-493.5088v-46.9525c0-10.567,8.5663-19.1333,19.1333-19.1333h408.6291c8.0184,0,15.604,3.6374,20.6242,9.8898l45.1221,56.1959Z" fill="#840707" />
                             <g clipPath="url(#clippath-1)">

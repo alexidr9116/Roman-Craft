@@ -12,6 +12,8 @@ import { MaterialsIcon } from "../component/icons/MaterailsIcon";
 import { WeaponCastIcon } from "../component/icons/WeaponCastIcon";
 import { WeaponIcon } from "../component/icons/WeaponIcon";
 import InventoryItem from "../component/InventoryItem";
+import Scrollbar from "../component/scrollbar/Scrollbar";
+import useResponsive from "../hook/useResponsive";
 const FlexStyle = styled('div', {})(({ }) => ({
     display: "flex",
     flexWrap: "wrap",
@@ -27,7 +29,7 @@ const INVENTORY_ITEMS = [
             { image: '/assets/casts/CASTS_BASIC_LONG_RANGE-01.png', count: 2, name: "long range" },
             { image: '/assets/casts/CASTS_BASIC_POLEARM-01.png', count: 1, name: "ploearm" },
             { image: '/assets/casts/CASTS_BASIC_SHIELD-01.png', count: 2, name: "shiled" },
-            { image: '',  name: "sword" }
+            { image: '', name: "sword" }
         ]
     },
     {
@@ -50,7 +52,7 @@ const INVENTORY_ITEMS = [
             { image: '/assets/materials/MATERIALS IRON-01.png', count: 1, name: "Iron" },
             { image: '/assets/materials/MATERIALS SILVER-01.png', count: 4, name: "Silver" },
             { image: '/assets/materials/MATERIALS STONE-01.png', count: 3, name: "Stone" },
-            { image: ' ',  name: "Wood" },
+            { image: ' ', name: "Wood" },
         ]
     },
     {
@@ -67,53 +69,58 @@ const INVENTORY_ITEMS = [
 
         ]
     },
-    
+
     {
         title: 'Weapons',
         icon: <WeaponIcon />,
         items: [
-            { image: '/assets/Mayan Weapon/BLUDGEON/Mayan Macuahuitl LV4-01.png',isWeapon: true, name: "BLUDGEON" },
-            { image: '/assets/Mayan Weapon/LONG RANGE/MAYAN HORNET GRENADE LV 4-01.png',isWeapon: true, name: "BLUDGEON" },
-             { image: '/assets/Mayan Weapon/STAFF/MAYAN QUETZALCOATL STAFF LV 4.png',isWeapon: true, name: "BLUDGEON" },
-            { image: '', isWeapon: true,   name: "" },
-            { image: '', isWeapon: true,  name: "" },
+            { image: '/assets/Mayan Weapon/BLUDGEON/Mayan Macuahuitl LV4-01.png', isWeapon: true, name: "BLUDGEON" },
+            { image: '/assets/Mayan Weapon/LONG RANGE/MAYAN HORNET GRENADE LV 4-01.png', isWeapon: true, name: "BLUDGEON" },
+            { image: '/assets/Mayan Weapon/STAFF/MAYAN QUETZALCOATL STAFF LV 4.png', isWeapon: true, name: "BLUDGEON" },
+            { image: '', isWeapon: true, name: "" },
+            { image: '', isWeapon: true, name: "" },
 
         ]
     },
 
 ]
 export default function InventoryList() {
+    const isDesktop = useResponsive('up', 'lg')
     return (
         <Stack>
             <InventoryTitleIllustration></InventoryTitleIllustration>
             <Box sx={{
                 border: "solid 2px #c60000", borderRadius: 3, borderTopLeftRadius: 0,
                 minHeight: '500px',
-                maxHeight:'800px',
-                overflow: "auto",
+                maxHeight: (isDesktop ? '800px' : '500px'),
                 paddingY: 2,
                 paddingLeft: 3,
                 paddingRight: 6,
                 background: "rgba(40,40,40,0.7)",
-                
+
             }}>
+                <Scrollbar sx={{
 
-                {INVENTORY_ITEMS.map((inventory, index) => (
-                    <React.Fragment key={index}>
-                        <Stack direction="row" sx={{ alignItems: 'center', borderBottom: "2px solid white", padding: 1 }}>
-                            {inventory.icon}
-                            <Typography color={'white'}>{inventory.title}</Typography>
-                        </Stack>
-                        <FlexStyle>
-                            {inventory.items.map((item, ind) => (
-                                <InventoryItem isWeaponItem={item.isWeapon} key = {ind} count={item.count} image={item.image} sx={{ width: '105px', height: "130px" }} name={item.name}></InventoryItem>
-                            ))}
-                        </FlexStyle>
+                    minHeight: '500px',
+                    maxHeight: (isDesktop ? '800px' : '500px'),
 
-                    </React.Fragment>
-                ))
-                }
+                }}>
+                    {INVENTORY_ITEMS.map((inventory, index) => (
+                        <React.Fragment key={index}>
+                            <Stack direction="row" sx={{ alignItems: 'center', borderBottom: "2px solid white", padding: 1 }}>
+                                {inventory.icon}
+                                <Typography color={'white'}>{inventory.title}</Typography>
+                            </Stack>
+                            <FlexStyle>
+                                {inventory.items.map((item, ind) => (
+                                    <InventoryItem isWeaponItem={item.isWeapon} key={ind} count={item.count} image={item.image} sx={{ width: '105px', height: "130px" }} name={item.name}></InventoryItem>
+                                ))}
+                            </FlexStyle>
 
+                        </React.Fragment>
+                    ))
+                    }
+                </Scrollbar>
             </Box>
         </Stack>
     )

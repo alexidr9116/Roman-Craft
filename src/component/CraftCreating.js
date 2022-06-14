@@ -100,7 +100,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                                 <g clipPath="url(#clippath-1)">
                                     <use transform="translate(1022.2305 819.9099) rotate(-180) scale(.2502)" href="#image" />
                                 </g>
-                                {items.length>2 &&
+                                {items.length>2 &&   items[2].image && items[2].image!=="" &&
                                 <image  x="831.418" y="570.2677" width="179.9893" height="174.9312" href = {items[2].image}>
 
                                 </image>
@@ -117,7 +117,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
 
                             <g mix-blend-mode="multiply">
                                 
-                                {items.length>3 &&
+                                {items.length>3 &&items[3].image && items[3].image!=="" &&
                                 <image  x="1051.6227" y="570.2677" width="179.9893" height="174.9312" href = {items[3].image}>
 
                                 </image>
@@ -133,7 +133,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                             <g mix-blend-mode="multiply">
                                 
                                 {/* Third Row */}
-                                {items.length>4 &&
+                                {items.length>4 &&items[4].image && items[4].image!=="" &&
                                 <image x="831.418" y="778.0207" width="179.9893" height="174.9312" href = {items[4].image}>
 
                                 </image>
@@ -150,7 +150,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                                 {/* <g clipPath="url(#clippath-4)">
                                     <use transform="translate(1242.4353 1027.6629) rotate(-180) scale(.2502)" href="#image" />
                                 </g> */}
-                                {items.length>5 &&
+                                {items.length>5 &&items[5].image && items[5].image!=="" &&
                                 <image x="1051.6227" y="778.0207" width="179.9893" height="174.9312" href = {items[5].image}>
 
                                 </image>
@@ -190,7 +190,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                             <rect x="828.3221" y="356.0618" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(1841.5574 891.8403) rotate(180)" fill="url(#radial-gradient-5)" stroke="#fff" strokeMiterlimit="10" strokeWidth="4.6233" />
                             {/* First Row */}
                             <g mix-blend-mode="multiply">
-                            {items.length>0 &&
+                            {items.length>0 &&items[0].image && items[0].image!=="" &&
                                 <image x="831.418" y="358.4226" width="179.9893" height="174.9312" href = {items[0].image}>
 
                                 </image>
@@ -205,7 +205,7 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                         <g>
                             <rect x="1048.5268" y="356.0618" width="184.9133" height="179.7168" rx="5.4337" ry="5.4337" transform="translate(2281.967 891.8403) rotate(180)" fill="url(#radial-gradient-6)" stroke="#fff" strokeMiterlimit="10" strokeWidth="4.6233" />
                             <g mix-blend-mode="multiply">
-                            {items.length>1 &&
+                            {items.length>1 && items[1].image && items[1].image!=="" &&  
                                 <image x="1051.6227" y="358.4226" width="179.9893" height="174.9312" href = {items[1].image}>
 
                                 </image>
