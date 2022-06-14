@@ -30,9 +30,9 @@ export default function CraftCreate() {
             <Grid container sx={{ padding: 4, }} >
                 <Grid item lg={4} xs={12} sx={{ paddingX: 2, marginTop: -8, marginBottom: 8 }}>
                     {/* inventory list */}
-                     
+
                     <InventoryList></InventoryList>
-                    
+
                 </Grid>
                 <Grid item lg={8} xs={12}>
                     <Stack sx={{ paddingRight: 2, marginY: -8, marginBottom: 8 }}>
@@ -43,13 +43,15 @@ export default function CraftCreate() {
                             maxHeight: (isDesktop ? '800px' : '500px'),
                             overflow: "auto",
                             paddingLeft: 3,
-                            paddingRight: 6,
+                            paddingRight: 3,
                             marginLeft: 3,
                             padding: 2,
                             background: "rgba(40,40,40,0.7)",
                         }}>
-                            
-
+                            <Scrollbar sx={{
+                                minHeight: '500px',
+                                height: (isDesktop ? '750px' : '450px'),
+                            }}>
                                 {currentIndex === 1 &&
 
                                     <CraftCreating items={CRAFTING_ITEMS} sx={{ width: '100%' }} resultItem={RESULT_ITEM} />
@@ -59,7 +61,7 @@ export default function CraftCreate() {
                                         <RecipeBook />
                                     </Box>
                                 }
-                            
+                            </Scrollbar>
                         </Box>
 
                     </Stack>

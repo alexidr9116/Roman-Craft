@@ -10,7 +10,7 @@ const Scrollbar = ({
   const scrollTrackRef = useRef(null);
   const scrollThumbRef = useRef(null);
   const observer = useRef(null);
-  const [thumbHeight, setThumbHeight] = useState(20);
+  const [thumbHeight, setThumbHeight] = useState(52);
   const [scrollStartPosition, setScrollStartPosition] = useState(
     null
   );
@@ -20,7 +20,7 @@ const Scrollbar = ({
   function handleResize(ref, trackSize) {
     const { clientHeight, scrollHeight } = ref;
     // setThumbHeight(Math.max((clientHeight / scrollHeight) * trackSize, 20));
-    setThumbHeight(100);
+    setThumbHeight(52);
   }
  
 
@@ -41,6 +41,7 @@ const Scrollbar = ({
         const scrollAmount = Math.floor(
           clickRatio * contentCurrent.scrollHeight
         );
+        
         contentCurrent.scrollTo({
           top: scrollAmount,
           behavior: 'smooth',
@@ -164,10 +165,10 @@ const Scrollbar = ({
               cursor: isDragging ? 'grabbing' : 'grab',
             }}
           >
-            <div style={{width:'20px',backgroundColor: '#fff', border:"1px solid red", height:50, borderRadius:4, position:'absolute', right:'0px', top:'2px',zIndex:0}}>
+            <div style={{width:'20px',backgroundColor: '#fff', border:"1px solid red", height:52, borderRadius:4, position:'absolute', right:'0px', top:'2px',zIndex:0}}>
 
             </div>
-            <div style={{width:'24px',backgroundColor: 'red', height:52, borderRadius:4,position:'absolute',  zIndex:50}}>
+            <div style={{width:'24px',backgroundColor: 'red', height:50, borderRadius:4,position:'absolute',  zIndex:50}}>
 
             </div>
           </div>

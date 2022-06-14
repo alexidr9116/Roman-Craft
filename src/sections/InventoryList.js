@@ -95,7 +95,7 @@ export default function InventoryList() {
                 maxHeight: (isDesktop ? '800px' : '500px'),
                 paddingY: 2,
                 paddingLeft: 3,
-                paddingRight: 6,
+                paddingRight: 3,
                 background: "rgba(40,40,40,0.7)",
 
             }}>
