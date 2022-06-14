@@ -1,14 +1,14 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PropTypes from 'prop-types';
 
 CraftCreating.propTypes = {
     items:PropTypes.array,
     resultItem:PropTypes.object,
 }
-
 export default function CraftCreating({items=[], resultItem = {},...props}) {
     return (
         <Box {...props}  >
+           
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"  viewBox="0 0 1120 800">
             <defs>
                 <clipPath id="clippath">

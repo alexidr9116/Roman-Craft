@@ -31,7 +31,15 @@ export default function RecipeBook() {
 
             </Box>
 
-
+            {/* <Box width={'100%'} height={'100%'} sx = {{display:"flex", color:"white", justifyContent:'space-between'}}>
+                <label></label>
+                <Typography sx = {{flexShrink:1}}>LV1</Typography>
+                <Typography sx = {{flexShrink:1}}>LV1</Typography>
+                <Typography sx = {{flexShrink:1}}>LV1</Typography>
+                <Typography sx = {{flexShrink:1}}>LV1</Typography>
+                <Typography sx = {{flexShrink:1}}>LV1</Typography>
+                
+            </Box> */}
             <Box sx={{ width: '100%' }}>
                 <WeaponTree />
             </Box>
