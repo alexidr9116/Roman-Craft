@@ -68,7 +68,6 @@ const INVENTORY_ITEMS = [
     },
 
 ]
-
 export default function CraftingTable() {
     return (
         <Stack>

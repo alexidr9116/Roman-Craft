@@ -10,6 +10,7 @@ import InventoryListIcon from "../component/icons/InventoryListIcon";
 import { MaterialsIcon } from "../component/icons/MaterailsIcon";
 
 import { WeaponCastIcon } from "../component/icons/WeaponCastIcon";
+import { WeaponIcon } from "../component/icons/WeaponIcon";
 import InventoryItem from "../component/InventoryItem";
 const FlexStyle = styled('div', {})(({ }) => ({
     display: "flex",
@@ -23,10 +24,10 @@ const INVENTORY_ITEMS = [
         icon: <WeaponCastIcon />,
         items: [
             { image: '/assets/casts/CASTS_BASIC_BLUDGEON-01.png', count: 1, name: "bludgeon" },
-            { image: '/assets/casts/CASTS_BASIC_LONG_RANGE-01.png', count: 1, name: "long range" },
+            { image: '/assets/casts/CASTS_BASIC_LONG_RANGE-01.png', count: 2, name: "long range" },
             { image: '/assets/casts/CASTS_BASIC_POLEARM-01.png', count: 1, name: "ploearm" },
-            { image: '/assets/casts/CASTS_BASIC_SHIELD-01.png', count: 1, name: "shiled" },
-            { image: '/assets/casts/CASTS_BASIC_SWORD-01.png', count: 1, name: "sword" }
+            { image: '/assets/casts/CASTS_BASIC_SHIELD-01.png', count: 2, name: "shiled" },
+            { image: '',  name: "sword" }
         ]
     },
     {
@@ -34,7 +35,7 @@ const INVENTORY_ITEMS = [
         icon: <CatalystIcon />,
         items: [
             { image: '/assets/catalyst/BOTTLE_MAYAN_GREEN-01.png', count: 1, name: "mayan green" },
-            { image: '/assets/catalyst/BOTTLE_VIKING_BLUE-01.png', count: 1, name: "viking blue" },
+            { image: '/assets/catalyst/BOTTLE_VIKING_BLUE-01.png', count: 2, name: "viking blue" },
             { image: '/assets/catalyst/ROMAN_BOTTLE_RED-01.png', count: 1, name: "roman red" },
 
         ]
@@ -45,11 +46,11 @@ const INVENTORY_ITEMS = [
         items: [
             { image: '/assets/materials/MATERIALS BRONZE-01.png', count: 1, name: "Bronze" },
             { image: '/assets/materials/MATERIALS DIAMOND-01.png', count: 1, name: "Diamond" },
-            { image: '/assets/materials/MATERIALS GOLD-01.png', count: 1, name: "Gold" },
+            { image: '/assets/materials/MATERIALS GOLD-01.png', count: 2, name: "Gold" },
             { image: '/assets/materials/MATERIALS IRON-01.png', count: 1, name: "Iron" },
-            { image: '/assets/materials/MATERIALS SILVER-01.png', count: 1, name: "Silver" },
-            { image: '/assets/materials/MATERIALS STONE-01.png', count: 1, name: "Stone" },
-            { image: '/assets/materials/MATERIALS WOOD-01.png', count: 1, name: "Wood" },
+            { image: '/assets/materials/MATERIALS SILVER-01.png', count: 4, name: "Silver" },
+            { image: '/assets/materials/MATERIALS STONE-01.png', count: 3, name: "Stone" },
+            { image: ' ',  name: "Wood" },
         ]
     },
     {
@@ -66,9 +67,21 @@ const INVENTORY_ITEMS = [
 
         ]
     },
+    
+    {
+        title: 'Weapons',
+        icon: <WeaponIcon />,
+        items: [
+            { image: '/assets/Mayan Weapon/BLUDGEON/Mayan Macuahuitl LV4-01.png',isWeapon: true, name: "BLUDGEON" },
+            { image: '/assets/Mayan Weapon/LONG RANGE/MAYAN HORNET GRENADE LV 4-01.png',isWeapon: true, name: "BLUDGEON" },
+             { image: '/assets/Mayan Weapon/STAFF/MAYAN QUETZALCOATL STAFF LV 4.png',isWeapon: true, name: "BLUDGEON" },
+            { image: '', isWeapon: true,   name: "" },
+            { image: '', isWeapon: true,  name: "" },
+
+        ]
+    },
 
 ]
-
 export default function InventoryList() {
     return (
         <Stack>
@@ -93,7 +106,7 @@ export default function InventoryList() {
                         </Stack>
                         <FlexStyle>
                             {inventory.items.map((item, ind) => (
-                                <InventoryItem key = {ind} count={item.count} image={item.image} sx={{ width: '105px', height: "130px" }} name={item.name}></InventoryItem>
+                                <InventoryItem isWeaponItem={item.isWeapon} key = {ind} count={item.count} image={item.image} sx={{ width: '105px', height: "130px" }} name={item.name}></InventoryItem>
                             ))}
                         </FlexStyle>
 

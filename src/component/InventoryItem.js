@@ -4,8 +4,9 @@ import { Box, SvgIcon, Typography } from "@mui/material";
 InventoryItem.propTypes = {
     image: PropTypes.string,
     count: PropTypes.number,
+    isWeaponItem: PropTypes.bool,
 }
-export default function InventoryItem({ image = '', count = 0, name = '', ...other }) {
+export default function InventoryItem({ image = '', count = 0, name = '', isWeaponItem= false, ...other }) {
     return (
         <Box component="div" {...other} >
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 120 120">
@@ -32,27 +33,28 @@ export default function InventoryItem({ image = '', count = 0, name = '', ...oth
                             </g>
                         </g>
                     </g>
+                    {!isWeaponItem &&
                     <rect x="110.6803" y="126.7633" width="41.3864" height="26.6712" rx="5.0583" ry="5.0583" stroke="#fff" strokeMiterlimit="10" strokeWidth="2.1121" />
-                    {image !== '' &&
-                        <image x="47.7338" y="143.1646" width="84.4748" height="82.1009"    href={image}></image>
                     }
-                    {count>0 &&
-                        <text fill = '#fff' fontSize = '22'>
+                    {image !== '' &&
+                        <image x="47.7338" y="143.1646" width="84.4748" height="82.1009" href={image}></image>
+                    }
+                    {count > 0 &&
+                        <text fill='#fff' fontSize='22'>
                             <tspan x="123.6803" y="148.7633" width="41.3864" height="26.6712">
                                 {count}
                             </tspan>
                         </text>
                     }
-                    
-                        <text fill = '#ccc' fontSize = '12'>
-                            <tspan x="52.3991" y="246.7633" width="240.3864" height="26.6712">
+                    <text fill='#ccc' fontSize='12'>
+                        <tspan x="52.3991" y="246.7633" width="240.3864" height="26.6712">
                             {name}
-                            </tspan>
-                        </text>
-                   
+                        </tspan>
+                    </text>
+
                 </g>
             </svg>
-            
+
         </Box>
 
     )
