@@ -11,7 +11,7 @@ export default function MainLayout() {
             
             <Box component='div' sx={{minHeight:"768px",overflowX:'hidden', mt: CONFIG_UI.height,
             background:'gray',
-            // background:"url('../assets/Crafting_UI_layer0_background.svg')" ,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:"repeat" 
+            background:"url('../assets/Crafting_UI_layer0_background.svg')" ,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:"repeat" 
             }}
             >
                 

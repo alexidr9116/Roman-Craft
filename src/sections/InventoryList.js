@@ -3,10 +3,10 @@ import { Stack, Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles"
 import React from "react";
 import InventoryTitleIllustration from "../assets/illustration_inventory";
-import InventoryItemIllustration from "../assets/illustration_inventory_item";
+
 import { CatalystIcon } from "../component/icons/CatalystIcon";
 import { GemsIcon } from "../component/icons/GemsIcon";
-import InventoryListIcon from "../component/icons/InventoryListIcon";
+
 import { MaterialsIcon } from "../component/icons/MaterailsIcon";
 
 import { WeaponCastIcon } from "../component/icons/WeaponCastIcon";

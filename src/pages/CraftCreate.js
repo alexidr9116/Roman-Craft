@@ -5,6 +5,7 @@ import CraftingTableTitleIcon from "../assets/illustration_crafting_item";
 import CraftCreating from "../component/CraftCreating";
 import Page from "../component/Page";
 import InventoryList from "../sections/InventoryList";
+import RecipeBook from "../sections/RecipeBook";
 
 const CRAFTING_ITEMS = [
 
@@ -20,40 +21,47 @@ const CRAFTING_ITEMS = [
 
 ]
 const RESULT_ITEM = {
-    image:'/assets/Chinese Pangu Axe LV 4-01.png', name:"Chinese Pangu Axe"}
+    image: '/assets/Chinese Pangu Axe LV 4-01.png', name: "Chinese Pangu Axe"
+}
 
 export default function CraftCreate() {
     const [currentIndex, setCurrentIndex] = useState(1);
     return (
         <Page title="Craft Create">
-            <Grid container sx={{padding:4, }} >
-                <Grid item md={4} xs={12} sx={{ paddingX: 2, marginTop:-8, marginBottom:8 }}>
+            <Grid container sx={{ padding: 4, }} >
+                <Grid item lg={4} xs={12} sx={{ paddingX: 2, marginTop: -8, marginBottom: 8 }}>
                     {/* inventory list */}
-                    {/* <InventoryList></InventoryList> */}
+                    <InventoryList></InventoryList>
                 </Grid>
-                <Grid item md={8} xs={12}>
-                    <Stack sx={{ paddingRight: 2, marginY:-8, marginBottom:8}}>
-                        <CraftingTableTitleIcon  handleRecipeBook={()=>{setCurrentIndex(2)}} handleCraftingTable={()=>{setCurrentIndex(1)}} currentIndex = {currentIndex} />
+                <Grid item lg={8} xs={12}>
+                    <Stack sx={{ paddingRight: 2, marginY: -8, marginBottom: 8 }}>
+                        <CraftingTableTitleIcon handleRecipeBook={() => { setCurrentIndex(2) }} handleCraftingTable={() => { setCurrentIndex(1) }} currentIndex={currentIndex} />
                         <Box sx={{
                             border: "solid 2px #840707", borderRadius: 3, borderTopLeftRadius: 0,
                             minHeight: '500px',
-                            maxHeight:'800px',
+                            maxHeight: '800px',
                             overflow: "auto",
                             paddingLeft: 3,
                             paddingRight: 6,
                             marginLeft: 3,
                             padding: 2,
-                           
                             background: "rgba(40,40,40,0.7)",
                         }}>
                             {/* <CraftCreating items={CRAFTING_ITEMS} sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/> */}
-                            <CraftCreating  sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/>
+                            {currentIndex === 1 &&
+                                <CraftCreating items={CRAFTING_ITEMS} sx={{ width: '100%' }} resultItem={RESULT_ITEM} />
+                            }
+                            {currentIndex === 2 &&
+                            <Box sx = {{padding:4, display:'flex', flexDirection:'column', alignItems:'center'}}>
+                                <RecipeBook />
+                            </Box>
+                            }
                         </Box>
                     </Stack>
 
                 </Grid>
             </Grid>
-            <Box sx={{height:'6rem'}}>
+            <Box sx={{ height: '6rem' }}>
 
             </Box>
         </Page>
