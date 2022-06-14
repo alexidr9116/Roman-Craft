@@ -23,15 +23,15 @@ const CRAFTING_ITEMS = [
 const RESULT_ITEM = {
     image: '/assets/Chinese Pangu Axe LV 4-01.png', name: "Chinese Pangu Axe"
 }
-
 export default function CraftCreate() {
     const [currentIndex, setCurrentIndex] = useState(1);
     return (
         <Page title="Craft Create">
-            <Grid container sx={{ padding: 4, }} >
-                <Grid item lg={4} xs={12} sx={{ paddingX: 2, marginTop: -8, marginBottom: 8 }}>
+            <Grid container sx={{padding:4, }} >
+                <Grid item lg={4} xs={12} sx={{ paddingX: 2, marginTop:-8, marginBottom:8 }}>
                     {/* inventory list */}
                     <InventoryList></InventoryList>
+ 
                 </Grid>
                 <Grid item lg={8} xs={12}>
                     <Stack sx={{ paddingRight: 2, marginY: -8, marginBottom: 8 }}>
@@ -48,6 +48,7 @@ export default function CraftCreate() {
                             background: "rgba(40,40,40,0.7)",
                         }}>
                             {/* <CraftCreating items={CRAFTING_ITEMS} sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/> */}
+ 
                             {currentIndex === 1 &&
                                 <CraftCreating items={CRAFTING_ITEMS} sx={{ width: '100%' }} resultItem={RESULT_ITEM} />
                             }
@@ -56,6 +57,7 @@ export default function CraftCreate() {
                                 <RecipeBook />
                             </Box>
                             }
+ 
                         </Box>
                     </Stack>
 

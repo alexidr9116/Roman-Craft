@@ -299,7 +299,6 @@ export default function CraftCreating({items=[], resultItem = {},...props}) {
                 </g>
             </g>
         </svg>
-        
         </Box>
     )
 }
