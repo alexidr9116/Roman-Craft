@@ -82,7 +82,6 @@ const INVENTORY_ITEMS = [
     },
 
 ]
-
 export default function InventoryList() {
     return (
         <Stack>

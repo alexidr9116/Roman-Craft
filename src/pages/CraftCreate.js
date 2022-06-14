@@ -48,7 +48,6 @@ export default function CraftCreate() {
                         }}>
                             {/* <CraftCreating items={CRAFTING_ITEMS} sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/> */}
                             <CraftCreating  sx ={{  width:'100%'}} resultItem = {RESULT_ITEM}/>
-                           
                         </Box>
                     </Stack>
 
